@@ -1,8 +1,8 @@
 package com.algaworks.algamoneyapi.algamoneyapi.model;
 
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "pessoa")
@@ -12,10 +12,13 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
+    @NotNull
     private String nome;
 
+    @NotNull
     private Boolean ativo;
 
+    @Valid
     @Embedded
     private Endereco endereco;
 
