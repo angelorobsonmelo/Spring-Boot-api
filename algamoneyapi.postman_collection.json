@@ -11,7 +11,10 @@
 		"de31eb52-b6ff-3c98-47ec-b52625d07992",
 		"54368a05-8be8-6b9c-beb7-ac3ba43eb272",
 		"7db1f841-622d-7e64-8749-e07a3ef6ac4c",
-		"9e26a2dd-5372-e588-a66d-a417cdb35fe9"
+		"9e26a2dd-5372-e588-a66d-a417cdb35fe9",
+		"e2f5cc46-dd12-caea-692e-6215bd9fb0f5",
+		"998e1e5f-3a83-69e4-f0e2-a6a2c2b10814",
+		"f0734222-4a5a-dd93-bcaf-968dcba39ed6"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -185,6 +188,38 @@
 			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
 		},
 		{
+			"id": "998e1e5f-3a83-69e4-f0e2-a6a2c2b10814",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502304758531,
+			"name": "pesquisar lancamento",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "3c1a74b9-229c-23b9-e331-bc9bb1542eda",
+			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
+		},
+		{
 			"id": "9e26a2dd-5372-e588-a66d-a417cdb35fe9",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -273,6 +308,70 @@
 			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
 			"responses": [],
 			"rawModeData": " {\n        \"nome\": \"Carlos\",\n        \"endereco\": {\n            \"logradouro\": \"rua do fortunato\",\n            \"numero\": \"30\",\n            \"bairro\": \"Centro de convenções\",\n            \"cep\": \"55555-55\",\n            \"cidade\": \"Forta\",\n            \"estado\": \"Alagoas\"\n        },\n         \"ativo\": true\n }"
+		},
+		{
+			"id": "e2f5cc46-dd12-caea-692e-6215bd9fb0f5",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502304758531,
+			"name": "listar lancamentos",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "3c1a74b9-229c-23b9-e331-bc9bb1542eda",
+			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
+		},
+		{
+			"id": "f0734222-4a5a-dd93-bcaf-968dcba39ed6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502304758531,
+			"name": "salvar lancamento",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "998e1e5f-3a83-69e4-f0e2-a6a2c2b10814",
+			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
 		}
 	]
 }

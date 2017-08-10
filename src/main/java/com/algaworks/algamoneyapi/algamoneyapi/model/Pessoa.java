@@ -1,6 +1,9 @@
 package com.algaworks.algamoneyapi.algamoneyapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import javax.swing.text.StyledEditorKit;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -52,6 +55,12 @@ public class Pessoa {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    @Transient
+    @JsonIgnore
+    public Boolean isInativo(){
+        return !this.ativo;
     }
 
     @Override
