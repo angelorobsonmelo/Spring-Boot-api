@@ -8,7 +8,10 @@
 		"2bbbf418-012e-8c22-b04b-e2c750d17db2",
 		"3c1a74b9-229c-23b9-e331-bc9bb1542eda",
 		"e249e915-9cad-28c8-448d-bb0c14a62d65",
-		"7db1f841-622d-7e64-8749-e07a3ef6ac4c"
+		"de31eb52-b6ff-3c98-47ec-b52625d07992",
+		"54368a05-8be8-6b9c-beb7-ac3ba43eb272",
+		"7db1f841-622d-7e64-8749-e07a3ef6ac4c",
+		"9e26a2dd-5372-e588-a66d-a417cdb35fe9"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -122,6 +125,36 @@
 			"helperAttributes": {}
 		},
 		{
+			"id": "54368a05-8be8-6b9c-beb7-ac3ba43eb272",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas/70/ativo",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502375524477,
+			"name": "atualizar propriedade ativo",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"rawModeData": "true"
+		},
+		{
 			"id": "7db1f841-622d-7e64-8749-e07a3ef6ac4c",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -132,7 +165,7 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8080/pessoas/133",
+			"url": "localhost:8080/pessoas/1",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -144,12 +177,72 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1502304828822,
+			"time": 1502372914254,
 			"name": "pesquisar pessoa",
 			"description": "",
 			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
 			"responses": [],
 			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
+		},
+		{
+			"id": "9e26a2dd-5372-e588-a66d-a417cdb35fe9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas/14",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502372913055,
+			"name": "remover pessoa",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
+		},
+		{
+			"id": "de31eb52-b6ff-3c98-47ec-b52625d07992",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502373559699,
+			"name": "atualizar pessoa",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"rawModeData": "{\n  \n    \"nome\": \"Ângelo Robson Melo dos santos\",\n    \"ativo\": true,\n    \"endereco\": {\n        \"logradouro\": \"rua da paz\",\n        \"numero\": \"666\",\n        \"bairro\": \"Centro\",\n        \"cep\": \"57925-000\",\n        \"cidade\": \"Maceió\",\n        \"estado\": \"Alagoas\"\n    }\n}"
 		},
 		{
 			"id": "e249e915-9cad-28c8-448d-bb0c14a62d65",
@@ -174,12 +267,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1502307543307,
+			"time": 1502369848781,
 			"name": "salvar pessoa",
 			"description": "",
 			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
 			"responses": [],
-			"rawModeData": " {\n        \"nome\": \"Roberto\",\n        \"endereco\": {\n            \"logradouro\": \"rua do fortunato\",\n            \"numero\": \"30\",\n            \"bairro\": \"Centro de convenções\",\n            \"cep\": \"55555-55\",\n            \"cidade\": \"Forta\",\n            \"estado\": \"Alagoas\"\n        },\n         \"ativo\": true\n }"
+			"rawModeData": " {\n        \"nome\": \"Carlos\",\n        \"endereco\": {\n            \"logradouro\": \"rua do fortunato\",\n            \"numero\": \"30\",\n            \"bairro\": \"Centro de convenções\",\n            \"cep\": \"55555-55\",\n            \"cidade\": \"Forta\",\n            \"estado\": \"Alagoas\"\n        },\n         \"ativo\": true\n }"
 		}
 	]
 }
