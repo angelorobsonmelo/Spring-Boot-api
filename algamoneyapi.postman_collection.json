@@ -14,7 +14,8 @@
 		"9e26a2dd-5372-e588-a66d-a417cdb35fe9",
 		"e2f5cc46-dd12-caea-692e-6215bd9fb0f5",
 		"998e1e5f-3a83-69e4-f0e2-a6a2c2b10814",
-		"f0734222-4a5a-dd93-bcaf-968dcba39ed6"
+		"f0734222-4a5a-dd93-bcaf-968dcba39ed6",
+		"d5744b2e-d156-c23a-29e0-28c2438b6958"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -250,6 +251,38 @@
 			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
 		},
 		{
+			"id": "d5744b2e-d156-c23a-29e0-28c2438b6958",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/pessoas",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502304758531,
+			"name": "remover lancamento",
+			"description": "",
+			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "f0734222-4a5a-dd93-bcaf-968dcba39ed6",
+			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
+		},
+		{
 			"id": "de31eb52-b6ff-3c98-47ec-b52625d07992",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -352,26 +385,24 @@
 					"enabled": true
 				}
 			],
-			"url": "localhost:8080/pessoas",
+			"url": "localhost:8080/lancamentos",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "GET",
+			"method": "POST",
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1502304758531,
+			"time": 1502816399812,
 			"name": "salvar lancamento",
 			"description": "",
 			"collectionId": "7bd75c10-340c-2573-188f-30b15e3b7248",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "998e1e5f-3a83-69e4-f0e2-a6a2c2b10814",
-			"rawModeData": "{\n\t\"nome\": \"dfdasfs\"\n}"
+			"rawModeData": "{\n      \n        \"descricao\": \"fff\",\n        \"dataVencimento\": \"2017-06-30\",\n        \"dataPagamento\": null,\n        \"valor\": 6500,\n        \"observacao\": \"Distribuição de bens\",\n        \"tipo\": \"RECEITA\",\n        \"categoria\": {\n            \"codigo\": 1\n        },\n        \"pessoa\": {\n            \"codigo\": 1\n      \n        }\n  }"
 		}
 	]
 }
