@@ -36,7 +36,6 @@ public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
         TypedQuery<Lancamento> query = manager.createQuery(criteria);
         adicionarRestricoesDePaginacao(query, pageable);
 
-
         return new PageImpl<>(query.getResultList(), pageable, total(lancamentoFilter));
     }
 
