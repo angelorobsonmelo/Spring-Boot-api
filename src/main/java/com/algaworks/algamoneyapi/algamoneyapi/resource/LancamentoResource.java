@@ -3,6 +3,8 @@ package com.algaworks.algamoneyapi.algamoneyapi.resource;
 import com.algaworks.algamoneyapi.algamoneyapi.event.RecursoCriadoEvent;
 import com.algaworks.algamoneyapi.algamoneyapi.exceptionhandler.AlgaMoneyExceptionHandler;
 import com.algaworks.algamoneyapi.algamoneyapi.model.Lancamento;
+import com.algaworks.algamoneyapi.algamoneyapi.repository.LancamentoRepository;
+import com.algaworks.algamoneyapi.algamoneyapi.repository.filter.LancamentoFilter;
 import com.algaworks.algamoneyapi.algamoneyapi.service.LancamentoService;
 import com.algaworks.algamoneyapi.algamoneyapi.service.exception.PessoaInexistenteOuInativaException;
 import jdk.net.SocketFlow;
@@ -32,6 +34,9 @@ public class LancamentoResource {
     @Autowired
     private MessageSource messageSource;
 
+    @Autowired
+    LancamentoRepository lancamentoRepository;
+
     @PostMapping
     public ResponseEntity<Lancamento> salvar(@RequestBody @Valid Lancamento lancamento, HttpServletResponse response){
         Lancamento lancamentoSalvo = lancamentoService.salvar(lancamento);
@@ -41,8 +46,8 @@ public class LancamentoResource {
     }
 
     @GetMapping
-    public ResponseEntity<List<Lancamento>> listar(){
-        List<Lancamento> lancamentos = lancamentoService.listar();
+    public ResponseEntity<List<Lancamento>> pesquisar(LancamentoFilter lancamentoFilter){
+        List<Lancamento> lancamentos = lancamentoRepository.filtrar(lancamentoFilter);
         return ResponseEntity.ok(lancamentos);
     }
 
