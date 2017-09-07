@@ -4,7 +4,7 @@ package com.algaworks.algamoneyapi.algamoneyapi.config.property;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("algamoney")
-public class AlgaMoneyApiProperty {
+public class AlgamoneyApiProperty {
 
   private String originPermitida = "http://localhost:4200";
 
@@ -12,6 +12,14 @@ public class AlgaMoneyApiProperty {
 
   public Seguranca getSeguranca() {
     return seguranca;
+  }
+
+  public String getOriginPermitida() {
+    return originPermitida;
+  }
+
+  public void setOriginPermitida(String originPermitida) {
+    this.originPermitida = originPermitida;
   }
 
   public static class Seguranca {
@@ -25,13 +33,6 @@ public class AlgaMoneyApiProperty {
     public void setEnableHttps(boolean enableHttps) {
       this.enableHttps = enableHttps;
     }
-  }
 
-  public String getOriginPermitida() {
-    return originPermitida;
-  }
-
-  public void setOriginPermitida(String originPermitida) {
-    this.originPermitida = originPermitida;
   }
 }
