@@ -5,6 +5,7 @@ import com.algaworks.algamoneyapi.algamoneyapi.model.Pessoa;
 import com.algaworks.algamoneyapi.algamoneyapi.repository.LancamentoRepository;
 import com.algaworks.algamoneyapi.algamoneyapi.repository.PessoaRepository;
 import com.algaworks.algamoneyapi.algamoneyapi.service.exception.PessoaInexistenteOuInativaException;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,26 +14,45 @@ import java.util.List;
 @Service
 public class LancamentoService {
 
-    @Autowired
-   private LancamentoRepository lancamentoRepository;
+  @Autowired
+  private PessoaRepository pessoaRepository;
 
-    @Autowired
-    private PessoaRepository pessoaRepository;
+  @Autowired
+  private LancamentoRepository lancamentoRepository;
 
-    public Lancamento salvar(Lancamento lancamento) {
-        Pessoa pessoa = pessoaRepository.findOne(lancamento.getPessoa().getCodigo());
-        if (pessoa == null || pessoa.isInativo()) {
-            throw new PessoaInexistenteOuInativaException();
-        }
+  public Lancamento salvar(Lancamento lancamento) {
+    validarPessoa(lancamento);
 
-        return lancamentoRepository.save(lancamento);
+    return lancamentoRepository.save(lancamento);
+  }
+
+  public Lancamento atualizar(Long codigo, Lancamento lancamento) {
+    Lancamento lancamentoSalvo = buscarLancamentoExistente(codigo);
+    if (!lancamento.getPessoa().equals(lancamentoSalvo.getPessoa())) {
+      validarPessoa(lancamento);
     }
 
-    public List<Lancamento> listar(){
-        return lancamentoRepository.findAll();
+    BeanUtils.copyProperties(lancamento, lancamentoSalvo, "codigo");
+
+    return lancamentoRepository.save(lancamentoSalvo);
+  }
+
+  private void validarPessoa(Lancamento lancamento) {
+    Pessoa pessoa = null;
+    if (lancamento.getPessoa().getCodigo() != null) {
+      pessoa = pessoaRepository.findOne(lancamento.getPessoa().getCodigo());
     }
 
-    public Lancamento buscarLancamentoPeloCodigo(Long codigo){
-        return lancamentoRepository.findOne(codigo);
+    if (pessoa == null || pessoa.isInativo()) {
+      throw new PessoaInexistenteOuInativaException();
     }
+  }
+
+  private Lancamento buscarLancamentoExistente(Long codigo) {
+    Lancamento lancamentoSalvo = lancamentoRepository.findOne(codigo);
+    if (lancamentoSalvo == null) {
+      throw new IllegalArgumentException();
+    }
+    return lancamentoSalvo;
+  }
 }

@@ -1,11 +1,16 @@
 package com.algaworks.algamoneyapi.algamoneyapi.resource;
 
 import com.algaworks.algamoneyapi.algamoneyapi.event.RecursoCriadoEvent;
+import com.algaworks.algamoneyapi.algamoneyapi.model.Lancamento;
 import com.algaworks.algamoneyapi.algamoneyapi.model.Pessoa;
 import com.algaworks.algamoneyapi.algamoneyapi.repository.PessoaRepository;
+import com.algaworks.algamoneyapi.algamoneyapi.repository.filter.LancamentoFilter;
+import com.algaworks.algamoneyapi.algamoneyapi.repository.filter.PessoaFilter;
 import com.algaworks.algamoneyapi.algamoneyapi.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,12 +33,6 @@ public class PessoaResource {
   @Autowired
   private ApplicationEventPublisher publisher;
 
-  @GetMapping
-  public ResponseEntity<List<Pessoa>> listar(){
-    List<Pessoa> categorias = pessoaRepository.findAll();
-    return ResponseEntity.ok(categorias);
-  }
-
   @PostMapping
   @PreAuthorize("hasAuthority('ROLE_CADASTRAR_PESSOA') and #oauth2.hasScope('write')")
   public ResponseEntity<Pessoa> salvar(@Valid @RequestBody Pessoa pessoa, HttpServletResponse response){
@@ -49,6 +48,13 @@ public class PessoaResource {
     Pessoa pessoa = pessoaRepository.findOne(codigo);
     return pessoa != null ? ResponseEntity.ok(pessoa): ResponseEntity.notFound().build();
   }
+
+  @GetMapping
+  @PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA') and #oauth2.hasScope('read')")
+  public Page<Pessoa> pesquisar(PessoaFilter pessoaFilter, Pageable pageable){
+    return pessoaRepository.filtrar(pessoaFilter, pageable);
+  }
+
 
   @DeleteMapping("/{codigo}")
   @PreAuthorize("hasAuthority('ROLE_REMOVER_PESSOA') and #oauth2.hasScope('write')")
