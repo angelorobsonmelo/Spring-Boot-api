@@ -18,6 +18,8 @@ public class Endereco {
     private String cidade;
     @NotNull
     private String estado;
+    @NotNull
+    private String complemento;
 
     public String getLogradouro() {
         return logradouro;
@@ -65,5 +67,14 @@ public class Endereco {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public Endereco setComplemento(String complemento) {
+        this.complemento = complemento;
+        return this;
     }
 }
